@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+// We ahve to add the @CrossOrigin annotation to allow cross-origin requests from the frontend application. This is necessary because the frontend and backend are running on different ports (e.g., frontend on port 3000 and backend on port 8080). By adding @CrossOrigin, we enable the frontend to communicate with the backend without encountering CORS (Cross-Origin Resource Sharing) issues.
+@CrossOrigin(origins = "http://localhost:3000") // Allow requests from the frontend running on port 3000
 @RestController
 @RequestMapping("/employees")
 @RequiredArgsConstructor
